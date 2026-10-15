@@ -9,24 +9,128 @@ A responsive starter website built with HTML (HyperText Markup Language), CSS (C
 - `thank-you.html`: Confirmation page shown after the demo sign-up form is submitted.
 - `css/style.css`: Colors, layout, responsive styling, and mobile navigation layout.
 - `js/script.js`: Mobile menu, current footer year, demo contact message, and sign-up page redirect.
-- About section image loads from Unsplash and requires an internet connection.
+- The About section picture loads from Unsplash and requires an internet connection.
 
-## Run it in Visual Studio Code
+## Clone and run the project in Visual Studio Code
 
-1. Clone or download this repository.
-2. Open the repository folder in Visual Studio Code (VS Code).
-3. Install the **Live Server** extension by Ritwick Dey if needed.
-4. Open `index.html`, right-click in the editor, and select **Open with Live Server**.
-5. Test the navigation, contact form, and sign-up-to-thank-you flow.
+### 1. Install Git
 
-You can also open `index.html` directly in a browser, but Live Server is more convenient while editing.
+Git is the version control system used to download the repository and send code changes to GitHub.
+
+1. Open Visual Studio Code (VS Code).
+2. Select **Terminal → New Terminal**.
+3. Run:
+
+   ```bash
+   git --version
+   ```
+
+4. If a Git version is shown, continue. If Git is not recognized, install Git for Windows from <https://git-scm.com/download/win>, then restart VS Code.
+
+### 2. Clone the repository
+
+You can clone using the VS Code interface:
+
+1. Press `Ctrl + Shift + P` to open the Command Palette.
+2. Search for and select **Git: Clone**.
+3. Paste the repository URL:
+
+   ```text
+   https://github.com/gODtECH-Ctl-Create/okiki.git
+   ```
+
+4. Press Enter and choose a folder on your computer where the project should be saved.
+5. When prompted, click **Open** to open the cloned repository in VS Code.
+
+Alternatively, run these commands in the VS Code terminal from the folder where you keep projects:
+
+```bash
+git clone https://github.com/gODtECH-Ctl-Create/okiki.git
+cd okiki
+```
+
+If you use the terminal method, open the folder in VS Code with **File → Open Folder** and select the new `okiki` folder.
+
+### 3. Switch to the website branch
+
+The website changes are currently on the `feat/simple-website` branch until the pull request is merged. Switch to that branch to get these files:
+
+```bash
+git fetch origin
+git switch --track origin/feat/simple-website
+```
+
+If Git says the local branch already exists, use:
+
+```bash
+git switch feat/simple-website
+```
+
+Check the current branch:
+
+```bash
+git branch --show-current
+```
+
+It should show `feat/simple-website`.
+
+### 4. Install Live Server
+
+1. In VS Code, press `Ctrl + Shift + X` to open Extensions.
+2. Search for **Live Server** by Ritwick Dey.
+3. Click **Install**.
+
+### 5. Start the website
+
+1. In the Explorer panel, open `index.html`.
+2. Right-click inside the editor.
+3. Choose **Open with Live Server**.
+4. Your browser should open an address similar to `http://127.0.0.1:5500`.
+
+If that option is not visible, confirm the extension is installed and that you opened the project folder, not just an individual file.
+
+### 6. Test the pages
+
+- Click Home, About, Services, and Contact in the navigation bar.
+- Check that the About picture loads. An internet connection is needed for this image.
+- Click **Sign Up**, enter dummy test details, and submit the form.
+- Confirm the Thank You page opens and its home button returns to the main page.
+- Save code changes with `Ctrl + S`. Live Server should refresh the browser automatically.
+
+### 7. Send your changes to GitHub
+
+After editing files, check the working tree:
+
+```bash
+git status
+```
+
+Stage the changes:
+
+```bash
+git add .
+```
+
+Create a commit:
+
+```bash
+git commit -m "Update Okiki website"
+```
+
+Push the current branch to GitHub:
+
+```bash
+git push
+```
+
+Because you checked out the remote branch in Step 3, Git should normally know where to push. If Git requests authentication, follow the GitHub sign-in prompt. Review your updates on GitHub and in the existing pull request before merging them into `main`.
 
 ## Important: demo forms only
 
-The sign-up form does not register users, store details, or create real accounts. The contact form does not send email or store messages. The password field is only included to demonstrate a form layout. Do not enter a real password.
+The sign-up form only redirects to the Thank You page. It does not register users, save details, or create accounts. The contact form shows a confirmation in the browser but does not send email or store messages. Do not enter a real password.
 
-For real accounts, secure sign-in, and message delivery, connect an authentication provider or backend and a server-side form handler. Never store passwords in front-end JavaScript.
+For real accounts and secure sign-in, connect an authentication provider or a secure backend. For contact message delivery, connect a server-side form handler or form service. Never store passwords in front-end JavaScript.
 
 ## Publish with GitHub Pages
 
-After the code has been merged into `main`, open the repository's **Settings → Pages** on GitHub and choose the publishing source available for the repository. The entry page is at the repository root as `index.html`.
+After the website code has been merged into `main`, open the repository's **Settings → Pages** on GitHub and select the appropriate publishing source. The entry page is at the repository root as `index.html`.
