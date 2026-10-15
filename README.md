@@ -143,38 +143,7 @@ In `thank-you.html`, I used a heading, a paragraph, and a link:
 
 This page confirms that the demo form was submitted and gives the visitor a way to return to the home page.
 
-## How I ran the website locally
-
-1. I installed Git if it was not already installed.
-2. I opened Visual Studio Code (VS Code).
-3. I used **Ctrl + Shift + P**, selected **Git: Clone**, and entered this repository address:
-
-   ```text
-   https://github.com/gODtECH-Ctl-Create/okiki.git
-   ```
-
-4. I chose a folder on my computer and opened the cloned project in VS Code.
-5. I installed the **Live Server** extension by Ritwick Dey.
-6. I opened `index.html`, right-clicked inside the editor, and selected **Open with Live Server**.
-7. I tested the navigation links, the sign-up form, and the Thank You page.
-
-## How I update my local copy
-
-When the website changes on GitHub, I open my existing `okiki` folder in VS Code, open **Terminal → New Terminal**, and run:
-
-```bash
-git switch main
-git pull origin main
-```
-
-This downloads the newest version of the `main` branch into my local project. I do not need to clone the repository again.
-
-When I edit a file, I press `Ctrl + S` to save it. Live Server normally refreshes the browser to show the changes.
-
 ## What I learned
 
 I learned how to make a web page with headings, paragraphs, links, pictures, and a form. I also learned how a navigation link connects to a section, how simple CSS changes the look of a page, and how a form can open another page.
 
-## Important note
-
-This is a learning project. The sign-up form does **not** create an account or save a person's name or email. The form only redirects to the Thank You page. The Contact section uses a sample email address that should be replaced with a real address. To create real accounts or send messages, the website would need a secure service or backend.
