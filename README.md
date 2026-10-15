@@ -1,69 +1,180 @@
-# Okiki Website
+# My Okiki Website Project
 
-A very simple website made with HTML (HyperText Markup Language) and a little CSS (Cascading Style Sheets).
+## Introduction
 
-## Files
+In this project, I created a small website called **Okiki** using HTML (HyperText Markup Language) and a little CSS (Cascading Style Sheets). I kept the code simple so a beginner can read it and understand how a basic website works.
 
-- `index.html`: Home, About, Services, and Contact.
-- `signup.html`: Demo sign-up form.
-- `thank-you.html`: Thank-you page.
+The website has a Home section, About section, Services section, Contact section, a Sign Up page, and a Thank You page.
 
-## First-time setup in VS Code
+## Files I created
 
-1. Install Git from <https://git-scm.com/download/win> if it is not already installed.
-2. Open Visual Studio Code (VS Code) and press `Ctrl + Shift + P`.
-3. Choose **Git: Clone** and enter:
+- `index.html` contains the main website.
+- `signup.html` contains the sign-up form.
+- `thank-you.html` contains the message shown after the form is submitted.
+
+## How I built the website
+
+### 1. I started with the basic HTML structure
+
+Each HTML page starts with this structure:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Okiki</title>
+</head>
+<body>
+  <!-- Page content goes here -->
+</body>
+</html>
+```
+
+- `<!DOCTYPE html>` tells the browser that this is an HTML5 document.
+- `<html lang="en">` says the page language is English.
+- `<head>` contains page information that is not displayed as the main page content.
+- `<meta charset="UTF-8">` helps the browser display text correctly.
+- The viewport setting helps the page fit phone and computer screens.
+- `<title>` sets the text shown on the browser tab.
+- `<body>` contains the visible page content.
+
+### 2. I added the navigation bar
+
+In `index.html`, I used links inside a `<nav>` element:
+
+```html
+<nav>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#contact">Contact</a>
+  <a href="signup.html">Sign Up</a>
+</nav>
+```
+
+The links beginning with `#` move the visitor to a section on the same page. For example, `href="#about"` moves to the section with `id="about"`.
+
+The Sign Up link is different because `href="signup.html"` opens another HTML file.
+
+### 3. I created the sections on the home page
+
+I used headings and paragraphs to add content. For example:
+
+```html
+<section id="home">
+  <h1>Welcome to Okiki</h1>
+  <p>A simple place to find helpful services and support.</p>
+  <a href="signup.html">Get Started</a>
+</section>
+```
+
+- `<section>` groups related content together.
+- `id="home"` gives the section a name that the navigation link can find.
+- `<h1>` is the main heading.
+- `<p>` is a paragraph.
+- `<a>` creates a link.
+
+I repeated this idea for the About, Services, and Contact sections.
+
+### 4. I added a picture to the About section
+
+I used an image element:
+
+```html
+<img
+  src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=600&q=80"
+  alt="People working together">
+```
+
+The `src` attribute tells the browser where to find the image. The `alt` attribute describes the image for people who cannot see it and for situations where the picture does not load. The picture is hosted online, so the browser needs an internet connection to load it.
+
+### 5. I added a small amount of CSS
+
+I placed the CSS inside the `<style>` element in the `<head>` of `index.html`. CSS changes how the page looks.
+
+For example:
+
+```css
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  line-height: 1.6;
+}
+```
+
+- `font-family` chooses the text style.
+- `margin: 0` removes the browser's default outside space around the page.
+- `line-height` adds space between lines of text.
+
+I also used CSS to give the navigation bar a light background, add space around sections, limit the width of the picture, and make the Sign Up links look like simple buttons. I kept the design basic on purpose.
+
+### 6. I created the sign-up form
+
+In `signup.html`, I added a form with a name field, an email field, and a button:
+
+```html
+<form onsubmit="event.preventDefault(); window.location.href='thank-you.html';">
+  <p><label>Name: <input type="text" required></label></p>
+  <p><label>Email: <input type="email" required></label></p>
+  <button type="submit">Sign Up</button>
+</form>
+```
+
+- `<form>` groups the fields together.
+- `<label>` describes each field.
+- `type="text"` lets someone enter their name.
+- `type="email"` asks the browser to check that the email looks like an email address.
+- `required` means the field must be filled before the form can be submitted.
+- `type="submit"` makes the button submit the form.
+
+The `onsubmit` instruction is a small piece of JavaScript (the language used to add behavior to a web page). `event.preventDefault()` stops the browser from submitting the form in its normal way. `window.location.href='thank-you.html'` then opens the Thank You page.
+
+### 7. I created the Thank You page
+
+In `thank-you.html`, I used a heading, a paragraph, and a link:
+
+```html
+<h1>Thank you very much!</h1>
+<p>Thanks for visiting Okiki.</p>
+<a href="index.html">Back to Home</a>
+```
+
+This page confirms that the demo form was submitted and gives the visitor a way to return to the home page.
+
+## How I ran the website locally
+
+1. I installed Git if it was not already installed.
+2. I opened Visual Studio Code (VS Code).
+3. I used **Ctrl + Shift + P**, selected **Git: Clone**, and entered this repository address:
 
    ```text
    https://github.com/gODtECH-Ctl-Create/okiki.git
    ```
 
-4. Choose a folder on your computer, then click **Open** when cloning finishes.
-5. Install the **Live Server** extension by Ritwick Dey.
-6. Open `index.html`, right-click inside the editor, and choose **Open with Live Server**.
+4. I chose a folder on my computer and opened the cloned project in VS Code.
+5. I installed the **Live Server** extension by Ritwick Dey.
+6. I opened `index.html`, right-clicked inside the editor, and selected **Open with Live Server**.
+7. I tested the navigation links, the sign-up form, and the Thank You page.
 
-## Update your local copy
+## How I update my local copy
 
-Use these steps whenever you want to download the latest version of the website from GitHub.
-
-1. Open your existing `okiki` folder in VS Code.
-2. Save any changes you want to keep. If you have local edits that are not committed, commit them or back them up before pulling.
-3. Choose **Terminal → New Terminal**.
-4. Run the following commands one at a time:
-
-   ```bash
-   git switch main
-   git pull origin main
-   ```
-
-5. Your local files now include the latest changes from the GitHub `main` branch. If Live Server is running, check your browser; otherwise open `index.html` and select **Open with Live Server** again.
-
-**Important:** Run `git pull origin main` inside the terminal with the current directory set to your cloned `okiki` project folder. Do not clone the repository again every time you want an update.
-
-## Edit the website locally
-
-- Edit `index.html` to change the page text, links, picture, or sections.
-- Edit `signup.html` to change the sign-up form.
-- Edit `thank-you.html` to change the thank-you message.
-- Press `Ctrl + S` to save. Live Server should refresh the browser automatically.
-
-## Send your local changes to GitHub
-
-After editing and saving your files, run these commands in the VS Code terminal:
+When the website changes on GitHub, I open my existing `okiki` folder in VS Code, open **Terminal → New Terminal**, and run:
 
 ```bash
-git status
-git add .
-git commit -m "Update website content"
-git push origin main
+git switch main
+git pull origin main
 ```
 
-These commands show your changed files, stage your changes, create a commit, and push the commit to GitHub. Only push directly to `main` if that is how you want to work and your repository allows it. If you prefer using a branch and pull request, create a branch before editing and push that branch instead.
+This downloads the newest version of the `main` branch into my local project. I do not need to clone the repository again.
 
-If Git asks you to sign in, follow the GitHub authentication prompts. If `git pull` reports a conflict, resolve the marked files first and then commit the resolution.
+When I edit a file, I press `Ctrl + S` to save it. Live Server normally refreshes the browser to show the changes.
 
-## Test it
+## What I learned
 
-Click Home, About, Services, and Contact. Choose **Sign Up** and submit dummy details to see the thank-you page.
+I learned how to make a web page with headings, paragraphs, links, pictures, and a form. I also learned how a navigation link connects to a section, how simple CSS changes the look of a page, and how a form can open another page.
 
-The sign-up form does not create accounts or save details. The contact email in the page is a placeholder. Replace it with your own contact email.
+## Important note
+
+This is a learning project. The sign-up form does **not** create an account or save a person's name or email. The form only redirects to the Thank You page. The Contact section uses a sample email address that should be replaced with a real address. To create real accounts or send messages, the website would need a secure service or backend.
